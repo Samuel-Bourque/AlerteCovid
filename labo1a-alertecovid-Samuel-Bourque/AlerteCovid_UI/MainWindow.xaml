@@ -1,0 +1,45 @@
+﻿<Window x:Class="AlerteCovid_UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlerteCovid_UI"
+        mc:Ignorable="d"
+        Title="3Q5-Labo #1a" Height="185.91" Width="525">
+    <StackPanel>
+        <TextBlock Text="Alerte COVID" FontSize="24" HorizontalAlignment="Center"/>
+        <Grid x:Name="grilleAlerteCovid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontWeight="Bold" Text="Région" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock FontWeight="Bold" Text="Éclosions" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock FontWeight="Bold" Text="Alerte" Grid.Column="2" Grid.Row="0"/>
+
+            <TextBlock Text="{Binding Regions[0].NomRegion}" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="{Binding Regions[0].NbEclosions}" Grid.Column="1" Grid.Row="1" Margin="2"/>
+            <TextBox Text="{Binding Regions[0].NomEtatAlerte, Mode=OneWay}" Background="{Binding Regions[0].CouleurEtatAlerte, Mode=OneWay}" Grid.Column="2" Grid.Row="1"/>
+            
+            <TextBlock Text="{Binding Regions[1].NomRegion}" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="{Binding Regions[1].NbEclosions}" Grid.Column="1" Grid.Row="2" Margin="2"/>
+            <TextBox Text="{Binding Regions[1].NomEtatAlerte, Mode=OneWay}" Background="{Binding Regions[1].CouleurEtatAlerte, Mode=OneWay}" Grid.Column="2" Grid.Row="2"/>
+            
+            <TextBlock Text="{Binding Regions[2].NomRegion}" Grid.Column="0" Grid.Row="3"/>
+            <TextBlock Text="{Binding Regions[2].NbEclosions}" Grid.Column="1" Grid.Row="3" Margin="2"/>
+            <TextBox Text="{Binding Regions[2].NomEtatAlerte, Mode=OneWay}" Background="{Binding Regions[2].CouleurEtatAlerte, Mode=OneWay}" Grid.Column="2" Grid.Row="3"/>
+
+            <TextBlock Text="{Binding Regions[3].NomRegion}" Grid.Column="0" Grid.Row="4"/>
+            <TextBlock Text="{Binding Regions[3].NbEclosions}" Grid.Column="1" Grid.Row="4" Margin="2"/>
+            <TextBox Text="{Binding Regions[3].NomEtatAlerte, Mode=OneWay}" Background="{Binding Regions[3].CouleurEtatAlerte, Mode=OneWay}" Grid.Column="2" Grid.Row="4"/>
+        </Grid>
+    </StackPanel>
+</Window>
